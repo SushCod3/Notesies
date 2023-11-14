@@ -3,51 +3,70 @@
   <head>
     <bds />
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
     <title>Notely Project</title>
-    <style>
-      /* Add some basic styling */
-      nav {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px;
-          background-color: #f0f0f0;
-      }
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-      input[type="search"] {
-          padding: 5px;
-          border: 1px solid #ccc;
-          border-radius: 3px;
-          width: 80%;
-      }
-      /* Style the button */
-      button {
-            padding: 8px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-  </style>
   </head>
   <body>
     <!-- Place below is for your own exciting code -->
     <nav>
       <!-- Navigation elements are here -->
       <!-- Search bar with placeholder text -->
-      <input type="search" placeholder="Search...">
-      <button>+ Add</button>
+      <div class="container">
+        <div class="input-group mb-3" id="search-div">
+          <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button onclick="openDialog()" class="btn btn-primary" type="button">+ Add</button>
+          </div>
+        </div>
+      </div>
+      
     </nav>
-    <p>Time to write some code! 👀</p>
+    <div class="container">
+      <!-- note card -->
+    <div class="overlay" id="overlay">
+      <div class="card">
+        <h5 class="card-header">Add Note</h5>
+        <div class="card-body">
+          <!-- <h5 class="card-title">Special title treatment</h5> -->
+          <div class="input-group">
+            <!-- Title -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+              </div>
+              <input type="text" placeholder="Enter title" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <!-- Category -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Category</span>
+              </div>
+              <input type="text" placeholder="Enter Category" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+
+          <!-- Description -->
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Description</span>
+            </div>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+          <div id="card-button">
+            <button type="button" onclick="closeDialog()" class="btn btn-danger">Cancel</button>
+            <button type="button" onclick="saveNote()" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
     <!-- Change the [ME] part to your own name/GitHub link -->
     <div class="footer">
-      <a href="https://bigdevsoon.me" target="_blank" rel="noopener noreferrer"
-        >Project by BigDevSoon</a
-      >
-      |
-      <span>Built with ❤️ by [ME]</span>
+      <span>Built by <a href=""https://github.com/imsushmoy>Sushmoy</a></span>
     </div>
+    </div>
+    <script src="dialog.js"></script>
   </body>
 </html>

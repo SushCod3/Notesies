@@ -1,4 +1,12 @@
-/* This is an example CSS file, feel free to remove/edit it anytime */
+#card-button {
+  margin-top: 15px;
+}
+
+#search-div{
+  margin-top: 50px;
+}
+
+/* Footer */
 .footer {
   position: absolute;
   bottom: 0;
